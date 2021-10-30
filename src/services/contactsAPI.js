@@ -8,11 +8,9 @@ export async function getContacts() {
 }
 
 export async function addContacts(newContact) {
-  const res = await axios.post("/contacts", newContact);
-  return res;
+  return await axios.post("/contacts", newContact);
 }
 
 export async function deleteContacts(id) {
-  const res = await axios.delete(`/contacts/${id}`);
-  return res;
+  return await axios.delete(`/contacts/${id}`);
 }

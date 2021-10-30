@@ -4,22 +4,6 @@ import {
   addContacts,
   deleteContacts,
 } from "../services/contactsAPI";
-// import {
-//   fetchContactsSuccsess,
-//   fetchContactsRequest,
-//   fetchContactsError,
-//   fetchAddContacts,
-// } from "./actions";
-
-// export const fetchContactsOperation = () => async (dispatch) => {
-//   dispatch(fetchContactsRequest());
-//   try {
-//     const contacts = await getContacts();
-//     dispatch(fetchContactsSuccsess(contacts));
-//   } catch (error) {
-//     dispatch(fetchContactsError(error));
-//   }
-// };
 
 export const fetchContacts = createAsyncThunk(
   "fetchContacts",

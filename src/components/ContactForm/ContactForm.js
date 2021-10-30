@@ -10,8 +10,6 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
 
-  const id = uuidv4();
-
   const dispatch = useDispatch();
 
   const handleInput = (e) => {
@@ -22,7 +20,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addContactsOperation({ name, number, id }));
+    dispatch(addContactsOperation({ name, number, id: uuidv4() }));
     resetState();
   };
 
