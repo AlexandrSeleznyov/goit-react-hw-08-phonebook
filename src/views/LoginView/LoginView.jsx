@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { authOperations } from "../redux/auth";
+import { authOperations } from "../../redux/auth";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import Typography from "@mui/material/Typography";
-import s from "../styles/LoginView.module.css";
+import s from "./LoginView.module.css";
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -13,14 +13,16 @@ export default function LoginView() {
   const [password, setPassword] = useState("");
 
   const handleChange = ({ target: { name, value } }) => {
-    switch (name) {
-      case "email":
-        return setEmail(value);
-      case "password":
-        return setPassword(value);
-      default:
-        return;
-    }
+    // switch (name) {
+    //   case "email":
+    //     return setEmail(value);
+    //   case "password":
+    //     return setPassword(value);
+    //   default:
+    //     return;
+    // }
+
+    name === "email" ? setEmail(value) : setPassword(value);
   };
 
   const handleSubmit = (e) => {

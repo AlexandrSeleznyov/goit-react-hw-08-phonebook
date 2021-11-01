@@ -4,8 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 export const addContacts = createAction("app/add", (value) => ({
   payload: {
     id: uuidv4(),
-    name: value.name,
-    number: value.number,
+    ...value,
   },
 }));
 

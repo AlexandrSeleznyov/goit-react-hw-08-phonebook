@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import ContactForm from "../components/ContactForm/ContactForm";
-import Filter from "../components/Filter/Filter";
-import ContactList from "../components/ContactsList/ContactsList";
+import ContactForm from "../../components/ContactForm/ContactForm";
+import Filter from "../../components/Filter/Filter";
+import ContactList from "../../components/ContactsList/ContactsList";
 
-import { fetchContacts } from "../redux/operations";
-import s from "../styles/ContactsView.module.css";
+import { fetchContacts } from "../../redux/operations";
+import s from "./ContactsView.module.css";
 
 export default function ContactsView(params) {
   const dispatch = useDispatch();

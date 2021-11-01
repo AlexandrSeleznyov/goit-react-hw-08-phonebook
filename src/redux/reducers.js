@@ -6,16 +6,16 @@ import {
   addContactsOperation,
 } from "./operations";
 
-import * as Action from "./actions";
+import * as action from "./actions";
 
 const filter = createReducer("", {
-  [Action.filterContacts]: (_, { payload }) => payload,
+  [action.filterContacts]: (_state, { payload }) => payload,
 });
 
 const contacts = createReducer([], {
-  [fetchContacts.fulfilled]: (_, { payload }) => payload,
-  [deleteContactsOperation.fulfilled]: (_, { payload }) => payload,
-  [addContactsOperation.fulfilled]: (_, { payload }) => payload,
+  [fetchContacts.fulfilled]: (_state, { payload }) => payload,
+  [deleteContactsOperation.fulfilled]: (_state, { payload }) => payload,
+  [addContactsOperation.fulfilled]: (_state, { payload }) => payload,
 });
 
 const getIsLoading = createReducer(false, {

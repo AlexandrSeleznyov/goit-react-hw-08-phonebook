@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import s from "../styles/AuthNav.module.css";
+import s from "./AuthNav.module.css";
 
 export default function AuthNav() {
   return (

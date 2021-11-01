@@ -1,15 +1,15 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Switch } from "react-router-dom";
-import HomeView from "./views/HomeView";
-import ContactsView from "./views/ContactsView";
-import LoginView from "./views/LoginView";
-import RegisterView from "./views/RegisterView";
-import AppBar from "./components/AppBar";
+import { Switch, Redirect } from "react-router-dom";
+import HomeView from "./views/HomeView/HomeView";
+import ContactsView from "./views/ContactsView/ContactsView";
+import LoginView from "./views/LoginView/LoginView";
+import RegisterView from "./views/RegisterView/RegisterView";
+import AppBar from "./components/AppBar/AppBar";
 import authOperations from "./redux/auth/auth-operations";
-import PrivateRoute from "./components/PrivateRoute";
-import PublicRoute from "./components/PublicRoute";
+import PrivateRoute from "./components/routes/PrivateRoute";
+import PublicRoute from "./components/routes/PublicRoute";
 import { authSelectors } from "./redux/auth";
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
           <PrivateRoute path="/contacts">
             <ContactsView />
           </PrivateRoute>
+          <Redirect path="/" />
         </Switch>
       </div>
     )

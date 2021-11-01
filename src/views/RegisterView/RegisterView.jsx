@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { authOperations } from "../redux/auth";
-import s from "../styles/RegisterView.module.css";
+import { authOperations } from "../../redux/auth";
+import s from "./RegisterView.module.css";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import Box from "@mui/material/Box";
