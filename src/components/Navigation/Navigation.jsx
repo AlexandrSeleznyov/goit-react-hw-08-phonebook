@@ -9,7 +9,7 @@ const Navigation = () => {
   return (
     <nav>
       <NavLink to="/" exact className={s.link} activeClassName={s.activeLink}>
-        Главная
+        Main
       </NavLink>
       {isLoggedIn && (
         <NavLink
@@ -18,7 +18,7 @@ const Navigation = () => {
           className={s.link}
           activeClassName={s.activeLink}
         >
-          Контакты
+          Contacts
         </NavLink>
       )}
     </nav>

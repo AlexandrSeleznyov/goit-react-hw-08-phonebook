@@ -13,7 +13,7 @@ export default function UserMenu() {
   return (
     <div className={s.container}>
       <img src={avatar} alt="" width="32" className={s.avatar} />
-      <span className={s.name}>Добро пожаловать, {name}</span>
+      <span className={s.name}>Welcome, {name}</span>
       <Button
         type="button"
         sx={{
