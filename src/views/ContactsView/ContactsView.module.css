@@ -1,9 +1,9 @@
 .container {
-  width: 500px;
+  width: 700px;
   display: block;
   margin: 0 auto;
   padding: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .title {

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authOperations } from "../../redux/auth";
 import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import Typography from "@mui/material/Typography";
@@ -35,32 +36,42 @@ export default function LoginView() {
   return (
     <Box className={s.container}>
       <Typography variant="h4" className={s.title}>
-        Страница логина
+        LOGIN PAGE
       </Typography>
 
       <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-        <label className={s.label}>
-          Почта
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+        <TextField
+          sx={{ m: 1, width: "65ch" }}
+          className={s.label}
+          required
+          id="outlined-required"
+          type="email"
+          label="Email"
+          name="email"
+          margin="dense"
+          width="300"
+          value={email}
+          onChange={handleChange}
+        />
+        <TextField
+          sx={{ m: 1, width: "65ch" }}
+          className={s.label}
+          required
+          id="outlined-required"
+          type="password"
+          name="password"
+          label="Password"
+          value={password}
+          onChange={handleChange}
+        />
 
-        <label className={s.label}>
-          Пароль
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-
-        <Button type="submit" variant="contained" endIcon={<SendIcon />}>
-          Войти
+        <Button
+          type="submit"
+          sx={{ m: 1, width: "72ch", height: "7ch" }}
+          variant="contained"
+          endIcon={<SendIcon />}
+        >
+          SIGN IN
         </Button>
       </form>
     </Box>

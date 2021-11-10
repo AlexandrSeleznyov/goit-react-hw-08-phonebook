@@ -1,8 +1,8 @@
 .contactForm {
   display: flex;
   flex-direction: column;
-  border: 1px solid grey;
-  padding: 10px;
+  margin-bottom: 40px;
+
   width: fit-content;
   width: 300px;
 }

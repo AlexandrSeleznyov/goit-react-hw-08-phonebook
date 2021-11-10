@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 import s from "./ContactForm.module.css";
 import { addContactsOperation } from "../../redux/operations";
 import { Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import MuiPhoneNumber from "material-ui-phone-number";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -13,9 +15,13 @@ export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleInput = (e) => {
-    const { name, value } = e.target;
-
-    name === "name" ? setName(value) : setNumber(value);
+    if (!e.target) {
+      const value = e;
+      setNumber(value);
+    } else {
+      const { value } = e.target;
+      setName(value);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -31,34 +37,39 @@ export default function ContactForm() {
 
   return (
     <form className={s.contactForm} onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input
-          onChange={handleInput}
-          type="text"
-          value={name}
-          name="name"
-          placeholder="New contact name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-          required
-        />
-      </label>
-      <label>
-        Number:
-        <input
-          onChange={handleInput}
-          type="tel"
-          value={number}
-          name="number"
-          placeholder="Number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-          required
-        />
-      </label>
-      <Button type="submit" variant="contained">
-        Отправить
+      <TextField
+        onChange={handleInput}
+        sx={{ m: 1, width: "83ch" }}
+        className={s.label}
+        required
+        id="standard-required"
+        variant="standard"
+        type="text"
+        label="Name"
+        name="name"
+        margin="dense"
+        width="300"
+        value={name}
+      />
+
+      <MuiPhoneNumber
+        className={s.input}
+        sx={{ m: 1, width: "83ch" }}
+        required
+        id="outlined-required-name"
+        name="number"
+        label="Number"
+        defaultCountry={"ua"}
+        value={number}
+        onChange={handleInput}
+        margin="normal"
+      />
+      <Button
+        type="submit"
+        sx={{ m: 1, width: "92ch", height: "7ch" }}
+        variant="contained"
+      >
+        SAVE
       </Button>
     </form>
   );
